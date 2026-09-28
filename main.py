@@ -17,18 +17,23 @@
 import random
 
 def main():
-    secret_number = random.randint(1,2)
-    print("Guess the number!")
+    while True:
+        secret_number = random.randint(1,10)
+        print("Guess the number!")
 
-    guess = int(input("Please input your guess : "))
+        try:
+            guess = int(input("Please input your guess : "))
+        except ValueError:
+            print("整数を入力してください")
+            continue
 
-    print(f'You guessed: {guess}')
-    print(f'secret_number: {secret_number}')
+        print(f'You guessed: {guess}')
+        print(f'secret_number: {secret_number}')
 
-    if guess == secret_number:
-        print("You Win!!")
-    else:
-        print("You Lose!!")
+        if guess == secret_number:
+            print("You Win!!")
+        else:
+            print("You Lose!!")
 
 if __name__ == "__main__":
     main()
