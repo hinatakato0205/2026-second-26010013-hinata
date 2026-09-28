@@ -30,10 +30,15 @@ def main():
         print(f'You guessed: {guess}')
         print(f'secret_number: {secret_number}')
 
-        if guess == secret_number:
-            print("You Win!!")
+        if guess > secret_number:
+            print("Too Big!")
+            continue
+        elif guess < secret_number:
+            print("Too Small!")
+            continue
         else:
-            print("You Lose!!")
+            print("You Win!!")
+            break
 
 if __name__ == "__main__":
     main()
