@@ -21,8 +21,14 @@ def main():
         secret_number = random.randint(1,10)
         print("Guess the number!")
 
+        guess = input("数字を入力してください。qで終了します:")
+
+        if guess.lower() == "q":
+            print("終了します")
+            break
+
         try:
-            guess = int(input("Please input your guess : "))
+            guess = int(guess)
         except ValueError:
             print("整数を入力してください")
             continue
