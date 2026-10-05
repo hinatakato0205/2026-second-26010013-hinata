@@ -17,6 +17,9 @@ try:
     lines = output.splitlines()
     print(lines[0])
 
+    session_count = len(lines)
+    print(f"Logged-in sessions:{session_count}")
+
 except FileNotFoundError:
     print("コマンドが見つかりません")
 
