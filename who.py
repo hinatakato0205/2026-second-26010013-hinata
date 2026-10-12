@@ -31,16 +31,28 @@ try:
     else:
         print(f"ログインセッション数は{session_count}です。")
 
+    print()
+
+    users = []
     #ミッション6
     for line in lines:
+        parts = line.split()
+
+        if parts[-1] in users:
+            continue
+
         print(f"1行ごとに表示{line}")
         print()
-        parts = line.split()
         print(f"1行の要素を分解して表示{parts}")
         print()
         username = parts[0]
         print(f"ユーザー名の場所を指定する{username}")
-        
+        users.append(parts[-1])
+
+    print()
+    print(f"ログインユーザー数は{len(users)}です。")
+    print(users)
+
 except FileNotFoundError:
     print("コマンドが見つかりません")
 
