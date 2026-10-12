@@ -15,7 +15,12 @@ try:
     output = result.stdout.strip()
     #print(output)
     lines = output.splitlines()
+    print(f"インデックス指定で表示{lines[0]}")
+
+    print(lines)
     
+
+    #ミッション4 ミッション5
     session_count = len(lines)
 
     if session_count==0:
@@ -23,6 +28,10 @@ try:
 
     else:
         print(f"ログインセッション数は{session_count}です。")
+
+    #ミッション6
+    for line in lines:
+        print(line)
 
 except FileNotFoundError:
     print("コマンドが見つかりません")
