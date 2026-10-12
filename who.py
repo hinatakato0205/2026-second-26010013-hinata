@@ -15,10 +15,14 @@ try:
     output = result.stdout.strip()
     #print(output)
     lines = output.splitlines()
-    print(lines[0])
-
+    
     session_count = len(lines)
-    print(f"Logged-in sessions:{session_count}")
+
+    if session_count==0:
+        print("ログインセッションなし")
+
+    else:
+        print(f"ログインセッション数は{session_count}です。")
 
 except FileNotFoundError:
     print("コマンドが見つかりません")
