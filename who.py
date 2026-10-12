@@ -13,12 +13,14 @@ try:
     #print(f"実行結果{result.returncode}")
 
     output = result.stdout.strip()
-    #print(output)
+    print("-----outputのなかみ-----")
+    print(output)
     lines = output.splitlines()
-    print(f"インデックス指定で表示{lines[0]}")
-
+    #print(f"インデックス指定で表示{lines[0]}")
+    print()
+    print("行ごとに分けてリストにしたもの")
     print(lines)
-    
+    print()
 
     #ミッション4 ミッション5
     session_count = len(lines)
@@ -31,8 +33,14 @@ try:
 
     #ミッション6
     for line in lines:
-        print(line)
-
+        print(f"1行ごとに表示{line}")
+        print()
+        parts = line.split()
+        print(f"1行の要素を分解して表示{parts}")
+        print()
+        username = parts[0]
+        print(f"ユーザー名の場所を指定する{username}")
+        
 except FileNotFoundError:
     print("コマンドが見つかりません")
 
